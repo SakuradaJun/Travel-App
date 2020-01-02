@@ -90,7 +90,8 @@ def get_image_filename(instance, filename):
 class Images(models.Model):
     profile = models.ForeignKey(Profile, related_name="photos", default=None, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to=get_image_filename, blank=True, null=True)
-    
+    class Meta:
+        verbose_name_plural = "Images"
     def __str__(self):
         return self.image.url
     
