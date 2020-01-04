@@ -8,13 +8,13 @@ class Chat extends React.Component {
     constructor(props) {
         super(props);
         this.state = {}
-
+    
         this.waitForSocketConnection(() => {
           WebSocketInstance.addCallbacks(this.setMessages.bind(this), this.addMessage.bind(this))
           WebSocketInstance.fetchMessages(this.props.currentUser);
         });
     }
-
+    
     waitForSocketConnection(callback) {
         const component = this;
         setTimeout(
@@ -29,21 +29,21 @@ class Chat extends React.Component {
             }
         }, 100);
     }
-
+    
     addMessage(message) {
         this.setState({ messages: [...this.state.messages, message]});
     }
-
+    
     setMessages(messages) {
         this.setState({ messages: messages.reverse()});
     }
-
+    
     messageChangeHandler = (event) =>  {
         this.setState({
             message: event.target.value
         })
     }
-
+    
     sendMessageHandler = (e) => {
         e.preventDefault();
         const messageObject = {
@@ -55,7 +55,7 @@ class Chat extends React.Component {
             message: ''
         });
     }
-
+    
     renderMessages = (messages) => {
         const currentUser = "admin";
         return messages.map((message, i) => (

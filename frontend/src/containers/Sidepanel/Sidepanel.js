@@ -60,9 +60,9 @@ class Sidepanel extends React.Component {
                 <button id="settings"><i className="fa fa-cog fa-fw" aria-hidden="true"></i> <span>Settings</span></button>
             </div>
             </div>
-
+            
         );
     };
 }
 
-export default Sidepanel; 
+export default Sidepanel;

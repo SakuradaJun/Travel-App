@@ -5,7 +5,7 @@ import WebSocketInstance from './websocket';
 
 
 class App extends React.Component {
-
+    
     componentDidMount() {
         WebSocketInstance.connect();
     }
@@ -17,4 +17,4 @@ class App extends React.Component {
     };
 }
 
-ReactDOM.render(<App />, document.getElementById("app")); 
+ReactDOM.render(<App />, document.getElementById("app"));
